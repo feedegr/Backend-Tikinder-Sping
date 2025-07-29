@@ -4,10 +4,11 @@ import com.fededev.my_spring_app.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Aquí podrías agregar métodos personalizados si lo necesitas
     User findByEmail(String email);
-
+    Optional<User> findByUsername(String username);
 }
 
